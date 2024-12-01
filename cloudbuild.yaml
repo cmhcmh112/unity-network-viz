@@ -5,15 +5,16 @@ steps:
       - |
         echo "Unity 라이선스 활성화..."
         echo "$UNITY_LICENSE" > Unity_v2022.x.ulf
-    entrypoint: bash
+
   - name: gcr.io/$causal-smoke-442706-i6/unity-builder
     args:
-      - unity-cli
+      - 'unity-cli'
       - '-buildTarget'
-      - WebGL
-      - .
+      - 'WebGL'
+      - 'projectPath'
+      - '.'
       - '-executeMethod'
-      - Builder.BuildWebGL
+      - 'Builder.BuildWebGL'
 artifacts:
   objects:
     location: 'gs://${unity-network-assets-causal-smoke-442706-i6}/builds/'
