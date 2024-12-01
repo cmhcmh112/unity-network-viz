@@ -18,5 +18,4 @@ steps:
 artifacts:
   objects:
     location: 'gs://unity-network-assets-causal-smoke-442706-i6/builds/'
-    paths:
-      - builds/WebGL/**
+    paths: ['builds/WebGL/**']
